@@ -1,10 +1,13 @@
-package de.neusta.ddd.infrastructure;
+package de.neusta.ddd.infrastructure.raum;
+
+import java.util.List;
 
 public class RaumDTO {
 
     private String raumNummer;
     private String raumName;
     private String raumId;
+    private List<String> personen;
 
     public String getRaumNummer() {
         return raumNummer;
@@ -28,5 +31,13 @@ public class RaumDTO {
 
     public void setRaumId(final String raumId) {
         this.raumId = raumId;
+    }
+
+    public List<String> getPersonen() {
+        return personen;
+    }
+
+    public void setPersonen(final List<String> personen) {
+        this.personen = personen;
     }
 }

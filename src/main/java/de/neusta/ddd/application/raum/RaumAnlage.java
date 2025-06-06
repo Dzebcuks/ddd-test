@@ -1,9 +1,11 @@
-package de.neusta.ddd.application;
+package de.neusta.ddd.application.raum;
 
-import de.neusta.ddd.domain.Raum;
-import de.neusta.ddd.domain.RaumRepository;
+import de.neusta.ddd.domain.raum.Raum;
+import de.neusta.ddd.domain.raum.RaumRepository;
 import jakarta.annotation.Resource;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RaumAnlage {
 
     @Resource

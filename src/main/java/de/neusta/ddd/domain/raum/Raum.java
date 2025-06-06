@@ -1,7 +1,8 @@
-package de.neusta.ddd.domain;
+package de.neusta.ddd.domain.raum;
 
-import org.springframework.util.StringUtils;
+import de.neusta.ddd.domain.person.valueobject.PersonId;
 
+import java.util.List;
 import java.util.UUID;
 
 public class Raum {
@@ -9,6 +10,7 @@ public class Raum {
     private RaumID raumID;
     private RaumName raumName;
     private RaumNummer raumNummer;
+    private List<PersonId> personen;
 
     public Raum(RaumName raumName, RaumNummer raumNummer) {
         this.raumID = new RaumID(UUID.randomUUID());
@@ -40,11 +42,23 @@ public class Raum {
         this.raumNummer = raumNummer;
     }
 
+    public List<PersonId> getPersonen() {
+        return personen;
+    }
+
+    public void setPersonen(final List<PersonId> personen) {
+        this.personen = personen;
+    }
+
     public static class RaumID {
         private final UUID id;
 
         public RaumID(UUID id) {
             this.id = id;
+        }
+
+        public RaumID(final String raumId) {
+            id = UUID.fromString(raumId);
         }
 
         public UUID getId() {
